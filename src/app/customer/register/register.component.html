@@ -1,0 +1,42 @@
+<section class="w3l-breadcrumb">
+    <div class="breadcrum-bg py-sm-5 py-4">
+        <div class="container py-lg-3">
+
+            <h2>Register</h2>
+            <p><a routerLink="/customer/home">Home</a> &nbsp; / &nbsp; Register</p>
+
+        </div>
+    </div>
+</section>
+<section class="w3l-contact-1 py-5">
+    <div class="contacts-9 py-lg-5 py-sm-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <form [formGroup]="registerForm" (submit)="submit()">
+                        <div class="mb-3">
+                          <label class="form-label">Name</label>
+                          <input type="text" class="form-control"   formControlName = "name">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Contact</label>
+                          <input type="number" class="form-control"  formControlName = "contact" >
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Email address</label>
+                          <input type="email" class="form-control"   formControlName = "email">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Password</label>
+                          <input type="password" class="form-control"  formControlName = "password">
+                          
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary form-control my-4">Submit</button>
+                      </form>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</section>

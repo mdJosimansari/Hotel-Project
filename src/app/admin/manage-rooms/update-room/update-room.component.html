@@ -1,0 +1,26 @@
+<div class="bg-success-subtle py-5">
+    <div class="container">
+        <h1 class="text-center">Update room</h1>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form [formGroup]="manageForm" (ngSubmit)="submit()">
+                    <!-- name -->
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <!-- image -->
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Change room image</label>
+                      <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" (change)="imageChange($event)">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" [disabled]="manageForm.invalid">Submit</button>
+                  </form> 
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+  </div>

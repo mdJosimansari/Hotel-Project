@@ -1,0 +1,59 @@
+<section class="w3l-breadcrumb">
+  <div class="breadcrum-bg py-sm-5 py-4">
+    <div class="container py-lg-3">
+      <h2>Manage rooms</h2>
+      <p><a routerLink="/admin/Dashboard"></a> &nbsp; / &nbsp; Manage rooms</p>
+    </div>
+  </div>
+</section>
+<div class="bg-danger-subtle py-5">
+  <div class="container">
+    <!-- <h1 class="text-center">Manage rooms</h1>
+    <div class="text-center">
+      <button class="btn btn-primary" routerLink="/admin/add-room">
+        Add New
+      </button>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-10 border-end bg-danger-subtle fw-bold fs-3">Manage Rooms</div>
+            <div class="col-2 text-end">
+                <a class="btn btn-success me-3" routerLink="/admin/add-room">Add Room</a>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-dark my-3">
+      <thead>
+        <tr>
+          <th scope="col">Room No</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">CreatedAt</th>
+          <th scope="col">Image</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of manage">
+          <th scope="row">{{ x?.room_no }}</th>
+          <td>{{ x?.description }}</td>
+          <td>{{ x?.price | currency:'INR' }}</td>
+          <td>{{ x?.createdAt | date }}</td>
+          <td width="200px">
+            <img [src]="getImageUrl(x?.room_image)" class="w-100" alt="" />
+          </td>
+          <td>
+            <button class="btn btn-success" routerLink="/admin/update-room">
+              <i class="bi bi-pen"></i>
+            </button>
+            <button class="btn btn-danger" (click)="deleteManage(x?._id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
